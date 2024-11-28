@@ -1,0 +1,38 @@
+/* src/styles/NavBar.css */
+
+/* Style for the navbar */
+.navbar {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 10px 0; /* Padding for top and bottom */
+    position: sticky; /* Stick to the top */
+    top: 0; /* Position at the top */
+    z-index: 100; /* Ensure it stays above other elements */
+}
+
+/* Style for the brand link */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffc107; /* Brand text color */
+}
+
+/* Style for navigation links */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-link {
+    margin-right: 20px; /* Space between links */
+    font-size: 18px;
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Add hover effect */
+}
+
+.nav-link:hover {
+    color: #ffc107; /* Change color on hover */
+}
