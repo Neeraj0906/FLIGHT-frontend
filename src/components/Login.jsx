@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     try {
       // Replace localhost URL with your Render backend URL
       // const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/login'
-      const response = await axios.post('http://localhost:8000/api/users/login', {
+      const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/login', {
         email,
         password,
       });
