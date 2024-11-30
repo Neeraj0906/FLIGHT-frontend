@@ -14,7 +14,7 @@ function Register() {
         try {
              // Replace localhost URL with your Render backend URL
             // const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/register'
-            const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/login', {
+            const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/register', {
                 username,
                 email,
                 password,
