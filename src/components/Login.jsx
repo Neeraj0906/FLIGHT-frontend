@@ -4,11 +4,12 @@ import axios from 'axios';
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/users/login', {
+      const response = await axios.post('https://flight-backend-twe1.onrender.com/api/auth/login', {
         email,
         password,
       });
@@ -17,13 +18,14 @@ function Login({ onLogin }) {
       onLogin(); // Call the onLogin function passed as a prop to update app state
     } catch (error) {
       console.error('Error logging in:', error);
+      setMessage(error.response?.data?.error || "An error occurred");
       alert('Failed to log in: ' + error.response?.data?.error || error.message);
     }
   };
 
   return (
-    <div style={{ padding: '40px', backgroundColor: '#f9f9f9', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', maxWidth: '500px',marginLeft:"410px",marginTop:"-400px",height:"350px",width:"300px"}}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333',fontSize:"20px" }}><b>Login</b></h2>
+    <div style={{ padding: '40px', backgroundColor: '#f9f9f9', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', maxWidth: '500px', marginLeft:"410px", marginTop:"-400px", height:"350px", width:"300px"}}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333', fontSize:"20px" }}><b>Login</b></h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input
           type="email"
@@ -51,6 +53,7 @@ function Login({ onLogin }) {
           fontWeight: 'bold'
         }}><b>Login</b></button>
       </form>
+      {message && <p style={{ textAlign:'center' }}>{message}</p>}
     </div>
   );
 }
