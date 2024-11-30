@@ -16,7 +16,7 @@ function SearchFlights() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/flights/search",
+        "https://flight-backend-twe1.onrender.com/api/flights/search",
         {
           params: {
             originLocationCode: origin,
