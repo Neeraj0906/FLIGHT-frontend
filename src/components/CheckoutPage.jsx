@@ -10,7 +10,7 @@ const CheckoutPage = () => {
 
     const handlePaymentSuccess = async (token) => {
         // Call your backend API to process the payment with the token
-        const response = await fetch('http://localhost:8000/api/payments/create-payment', {
+        const response = await fetch('https://flight-backend-twe1.onrender.com/api/payments/create-payment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

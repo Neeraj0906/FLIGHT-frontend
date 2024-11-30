@@ -10,7 +10,7 @@ function UserDashboard() {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/bookings', {
+        const response = await axios.get('https://flight-backend-twe1.onrender.com/api/bookings', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -28,7 +28,7 @@ function UserDashboard() {
 
   const handleDelete = async (bookingId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/bookings/${bookingId}`, {
+      await axios.delete(`https://flight-backend-twe1.onrender.com/api/bookings/${bookingId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -26,7 +26,7 @@ function BookingForm({ flight }) {
         };
 
         try {
-            const response = await axios.post('http://localhost:8000/api/bookings', bookingData, {
+            const response = await axios.post('https://flight-backend-twe1.onrender.com/api/bookings', bookingData, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Include JWT in headers
                 },
