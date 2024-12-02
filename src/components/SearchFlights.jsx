@@ -92,8 +92,8 @@ function SearchFlights() {
   };
 
   return (
-    <div style={{ padding: '40px', backgroundColor: '#e0f7fa', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: "100%" }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '20px', fontSize: "30px", color: '#00796b' }}><b>Search Flights</b></h1>
+    <div style={{ padding: '40px', backgroundColor: '#2c3e50', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: "100%" }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '20px', fontSize: "30px", color: '#ecf0f1' }}><b>Search Flights</b></h1>
       <form onSubmit={handleSearch} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input
           type="text"
@@ -101,11 +101,11 @@ function SearchFlights() {
           value={origin}
           onChange={handleOriginChange}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', color: "black" }}
+          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1', color: "#ecf0f1", backgroundColor:"#34495e" }} // Dark background for input
         />
         {/* Suggestions for Origin */}
         {originSuggestions.length > 0 && (
-          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#fff', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
+          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#32CD32', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
             {originSuggestions.map((iata) => (
               <li key={iata.code} onClick={() => handleSuggestionClick(iata.code)} style={{ padding:'10px', cursor:'pointer' }}>
                 {iata.code} - {iata.city}
@@ -120,11 +120,11 @@ function SearchFlights() {
           value={destination}
           onChange={handleDestinationChange}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', color:"white" }}
+          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1', color:"#ecf0f1", backgroundColor:"#34495e" }} // Dark background for input
         />
         {/* Suggestions for Destination */}
         {destinationSuggestions.length > 0 && (
-          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#fff', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
+          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#32CD32', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
             {destinationSuggestions.map((iata) => (
               <li key={iata.code} onClick={() => handleDestinationSuggestionClick(iata.code)} style={{ padding:'10px', cursor:'pointer' }}>
                 {iata.code} - {iata.city}
@@ -133,17 +133,17 @@ function SearchFlights() {
           </ul>
         )}
         
-        <label style={{ fontWeight: 'bold' }}>
+        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
           Departure Date:
           <input
             type="date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
             required
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
           />
         </label>
-        <label style={{ fontWeight: 'bold' }}>
+        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
           Number of Adults:
           <input
             type="number"
@@ -151,17 +151,17 @@ function SearchFlights() {
             onChange={(e) => setAdults(e.target.value)}
             min="1"
             required
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
           />
         </label>
-        <label style={{ fontWeight: 'bold' }}>
+        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
           Number of Children:
           <input
             type="number"
             value={children}
             onChange={(e) => setChildren(e.target.value)}
             min="0"
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
           />
         </label>
         <button type="submit" style={{
@@ -177,15 +177,15 @@ function SearchFlights() {
 
       {flights.length > 0 && (
         <div style={{ marginTop: '20px' }}>
-          <h2 style={{ textAlign: 'center', color:'#00796b' }}>Available Flights</h2>
+          <h2 style={{ textAlign: 'center', color:'#ecf0f1' }}>Available Flights</h2>
           <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
             {flights.map((flight) => (
               <li key={flight.id} style={{
-                backgroundColor: '#fff',
-                padding: '15px',
-                marginBottom: '10px',
-                borderRadius: '8px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                backgroundColor:'#fff',
+                padding:'15px',
+                marginBottom:'10px',
+                borderRadius:'8px',
+                boxShadow:'0 2px 4px rgba(0,0,0,0.1)',
                 display:'flex',
                 justifyContent:'space-between',
                 alignItems:'center'
