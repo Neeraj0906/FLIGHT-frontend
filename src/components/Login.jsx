@@ -1,3 +1,4 @@
+// src/components/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -8,8 +9,6 @@ function Login({ onLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace localhost URL with your Render backend URL
-      // const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/login'
       const response = await axios.post('https://flight-backend-twe1.onrender.com/api/users/login', {
         email,
         password,
@@ -24,8 +23,8 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div style={{ padding: '40px', backgroundColor: '#f9f9f9', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', maxWidth: '500px',marginLeft:"410px",marginTop:"-400px",height:"350px",width:"300px"}}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333',fontSize:"20px" }}><b>Login</b></h2>
+    <div style={{ padding: '20px', backgroundColor: '#e1f5fe', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', maxWidth: '500px', margin: '20px auto', height: "250px", overflow: "hidden" }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#00796b', fontSize: "24px" }}><b>Login</b></h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input
           type="email"
@@ -33,7 +32,7 @@ function Login({ onLogin }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', color: "black" }}
         />
         <input
           type="password"
@@ -41,7 +40,7 @@ function Login({ onLogin }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', color: "black" }}
         />
         <button type="submit" style={{
           padding: '10px',

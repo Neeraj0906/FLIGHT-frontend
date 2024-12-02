@@ -43,8 +43,8 @@ function BookingForm({ flight }) {
     };
 
     return (
-        <div style={{ padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '400px', margin: '0 auto' }}>
-            <h2 style={{ textAlign: 'center', color: '#333' }}>Book Flight</h2>
+        <div style={{ padding: '20px', backgroundColor: '#e0f7fa', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '400px', margin: '20px auto' }}>
+            <h2 style={{ textAlign: 'center', color: '#00796b' }}>Book Flight</h2>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 <input
                     type="number"

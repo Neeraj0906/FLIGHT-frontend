@@ -6,10 +6,10 @@ import saveMoreImg from '../assets/Save More.png'; // Ensure the path is correct
 
 function Memories() {
   return (
-    <section style={{ padding: '20px', backgroundColor: '#f0f0f0', height: "630px", width: "82%", marginLeft: "135px", borderRadius: "10px",marginTop:"10px" }}>
+    <section style={{ padding: '20px', backgroundColor: '#e0f7fa', height: "630px", width: "100%", borderRadius: "10px", marginTop: "10px" }}>
       <div style={{ width: '82%', margin: '0 auto' }}> {/* Wrapper with 82% width */}
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ marginRight: "50%", fontSize: "45px", color: "black", justifyContent: "left", width: "100%" }}>
+          <h2 style={{ marginRight: "50%", fontSize: "45px", color: "#00796b", justifyContent: "left", width: "100%" }}>
             <b>TRAVEL TO MAKE MEMORIES ALL AROUND THE WORLD</b>
           </h2>
         </div>
@@ -31,7 +31,7 @@ function Memories() {
               "We prioritize affordability through discounted ticket prices and exclusive promotions without compromising quality.", imageStyle:{width:"150px",height:"150px",marginTop:"0px"} }
           ].map((item, index) => (
             <div key={index} style={{
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff',
               borderRadius: '8px',
               padding: '15px',
               textAlign: 'left',
@@ -43,8 +43,8 @@ function Memories() {
             }}>
               <img src={item.imageSrc} alt={item.title} 
                 style={item.imageStyle} />
-              <b><h4 style={{ color: 'black', marginTop:"5px" }}>{item.title}</h4></b>{/* Title in black */}
-              <p style={{ width: '100%', textAlign: 'center', marginTop: '10px' }}>{item.description}</p> {/* Adjusted description styling */}
+              <h4 style={{ color: '#00796b', marginTop:"5px" }}><b>{item.title}</b></h4>
+              <p style={{ width: '100%', textAlign: 'center', marginTop: '10px', color:"#555" }}>{item.description}</p> {/* Adjusted description styling */}
             </div>
           ))}
         </div>

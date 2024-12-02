@@ -13,14 +13,20 @@ function Header() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: "80px",
+      marginTop: "1px",
+      backgroundColor: "white"
     }}>
-      <b><h1 style={{
-        color: 'black',
+      <h1 style={{
+        color: '#003366', // Dark navy blue for better contrast
         textAlign: 'center',
-        marginBottom:"480px",
-        fontSize:"50px"
-      }}>Find And Book<br />A Great Experience</h1></b>
+        marginBottom: "450px",
+        borderRadius: "10px",
+        fontSize: "40px",
+        backgroundColor: "white",
+        width: "100%"
+      }}>
+        <b>Find And Book A Great Experience</b>
+      </h1>
     </header>
   );
 }

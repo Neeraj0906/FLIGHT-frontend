@@ -19,15 +19,14 @@ const Home = () => {
   };
 
   return (
-    <>
-      {/* <NavBar logoutUser={logoutUser} /> */}
-      <Header/>
-      <SearchFlights/>
-      <Plan/>
-      <Memories/>
+    <div style={{ backgroundColor: '#e0f7fa', minHeight: '100vh', paddingBottom: '20px' }}>
+      <Header />
+      <SearchFlights />
+      <Plan />
+      <Memories />
       <FeaturedTours />
       <Footer />
-    </>
+    </div>
   );
 };
 

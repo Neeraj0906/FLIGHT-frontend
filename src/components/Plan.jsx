@@ -9,31 +9,30 @@ function Plan() {
     <section
       style={{
         padding: "50px",
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "#e0f7fa", // Light blue background for contrast
         display: "flex",
         alignItems: "flex-start",
         height: "600px",
-        width:"82%",
-        marginLeft:"135px",
-        borderRadius:"15px",
-        marginTop:"10px"
+        width: "100%",
+        borderRadius: "15px",
+        marginTop: "10px"
       }}
     >
-      <div style={{ flex: 1, paddingRight: "20px",width:"70%" }}>
-      <p style={{ fontSize: "18px", color: "black", marginLeft: "35%", letterSpacing: "4px",marginBottom:"5px" }}>
-      <b>TRAVEL SUPPORT</b>
-      </p>
-<b><h2 style={{ marginBottom: "20px",marginLeft:"3%",color:"black",fontSize:"34px" }}>
-        PLAN YOUR TRAVEL WITH CONFIDENCE
-        </h2></b>
-<b><p style={{ marginBottom: "20px", color: "#777",marginLeft:"20px" }}>
-FIND HELP WITH YOUR BOOKINGS AND TRAVEL PLANS, AND SEE WHAT TO EXPECT ALONG YOUR JOURNEY.
-        </p></b>
-        <div style={{ marginBottom: "20px" }}>
+      <div style={{ flex: 1, paddingRight: "20px", width: "70%" }}>
+        <p style={{ fontSize: "18px", color: "#004d40", marginLeft: "35%", letterSpacing: "4px", marginBottom: "5px" }}>
+          <b>TRAVEL SUPPORT</b>
+        </p>
+        <h2 style={{ marginBottom: "20px", marginLeft: "3%", color: "#004d40", fontSize: "34px" }}>
+          <b>PLAN YOUR TRAVEL WITH CONFIDENCE</b>
+        </h2>
+        <p style={{ marginBottom: "20px", color: "#555", marginLeft: "20px" }}>
+          FIND HELP WITH YOUR BOOKINGS AND TRAVEL PLANS, AND SEE WHAT TO EXPECT ALONG YOUR JOURNEY.
+        </p>
+        <div style={{ marginBottom: "20px", color:"black"}}>
           <div
             style={{
               backgroundColor: "#007bff",
-              color: "#fff",
+              color: "black",
               padding: "10px",
               borderRadius: "5px",
               marginBottom: "10px",
@@ -50,7 +49,7 @@ FIND HELP WITH YOUR BOOKINGS AND TRAVEL PLANS, AND SEE WHAT TO EXPECT ALONG YOUR
           <div
             style={{
               backgroundColor: "#ff7f50",
-              color: "#fff",
+              color: "black",
               padding: "10px",
               borderRadius: "5px",
               marginBottom: "10px",
@@ -66,12 +65,12 @@ FIND HELP WITH YOUR BOOKINGS AND TRAVEL PLANS, AND SEE WHAT TO EXPECT ALONG YOUR
           <div
             style={{
               backgroundColor: "#ffcc99",
-              color: "#fff",
+              color: "black",
               padding: "10px",
               borderRadius: "5px",
             }}
           >
-            <span style={{ fontWeight: "bold" }}>03</span>{" "}
+            <span style={{ fontWeight: "bold", }}>03</span>{" "}
             <strong>Travel Requirements by destinations</strong>
             <p>
               Stay informed and plan your trip with ease, as we provide
@@ -83,7 +82,7 @@ FIND HELP WITH YOUR BOOKINGS AND TRAVEL PLANS, AND SEE WHAT TO EXPECT ALONG YOUR
       </div>
 
       {/* Images Section */}
-      <div style={{ position: "relative", width: "40%", height: "200px",marginTop:"50px" }}>
+      <div style={{ position: "relative", width: "40%", height: "200px", marginTop:"50px" }}>
         {/* First Image */}
         <img
           src={plan1}

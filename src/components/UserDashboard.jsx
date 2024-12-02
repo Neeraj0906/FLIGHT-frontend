@@ -46,8 +46,8 @@ function UserDashboard() {
   if (loading) return <div style={{ textAlign: 'center', padding: '20px' }}>Loading...</div>;
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '600px', margin: '0 auto' }}>
-      <h2 style={{ textAlign: 'center', color: '#333' }}>Your Bookings</h2>
+    <div style={{ padding: '20px', backgroundColor: '#e0f7fa', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '600px', margin: '20px auto' }}>
+      <h2 style={{ textAlign: 'center', color: '#00796b' }}>Your Bookings</h2>
       {bookings.length === 0 ? (
         <p>No bookings found.</p>
       ) : (

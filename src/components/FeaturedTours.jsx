@@ -26,15 +26,15 @@ function FeaturedTours() {
   ];
 
   return (
-    <section style={{ padding: '20px', backgroundColor: '#f0f0f0', width: '82%', marginLeft: 'auto', marginRight: 'auto' ,marginTop:"10px",borderRadius:"10PX"}}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px',fontSize:"45px" ,color:"black" }}><b>FEATURED TOURS</b></h2>
+    <section style={{ padding: '20px', backgroundColor: '#e0f7fa', width: '100%', marginTop: "10px", borderRadius: "10px" }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: "45px", color: "#00796b" }}><b>FEATURED TOURS</b></h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {tours.map((tour, index) => (
           <div key={index} style={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', borderRadius: '8px', padding: '10px', display: 'flex', alignItems: 'center' }}>
             <img style={{ height: "115px", width: "115px", borderRadius: "5px", marginRight: "10px" }} src={tour.imageUrl} alt={tour.name} />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: "10px", marginLeft: "20px",fontSize:"20px" }}>
-              <h4 style={{fontWeight:"bold",fontSize:"25px"}}>{tour.name}</h4>
-              <p>{tour.description}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: "10px", marginLeft: "20px", fontSize: "20px" }}>
+              <h4 style={{ fontWeight:"bold", fontSize:"25px", color:"#00796b" }}>{tour.name}</h4>
+              <p style={{ color:"#555" }}>{tour.description}</p>
             </div>
           </div>
         ))}

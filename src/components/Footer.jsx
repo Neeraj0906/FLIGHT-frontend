@@ -13,11 +13,10 @@ function Footer() {
       paddingTop: '30px',
       paddingBottom: '30px',
       position: 'relative', // Enable positioning for child elements
-      height:"230px",
-      marginTop:"10px",
-      width:"82%",
-      marginLeft:"135px",
-      borderRadius:"10px"
+      height: "230px",
+      marginTop: "10px",
+      width: "100%",
+      borderRadius: "10px"
     }}>
       <div style={{
         display: 'flex',

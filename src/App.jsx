@@ -26,6 +26,7 @@ function App() {
     return (
         <Router>
             <div>
+                <p>*Please use chrome browser*</p>
                 <NavBar logoutUser={logoutUser} /> {/* Include NavBar */}
                 {/* <h1>Flight Booking App</h1> */}
                 <Routes>
