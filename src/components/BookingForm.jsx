@@ -43,8 +43,8 @@ function BookingForm({ flight }) {
     };
 
     return (
-        <div style={{ padding: '20px', backgroundColor: '#e0f7fa', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '400px', margin: '20px auto' }}>
-            <h2 style={{ textAlign: 'center', color: '#00796b' }}>Book Flight</h2>
+        <div style={{ padding: '20px', backgroundColor: '#2c3e50', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', maxWidth: '400px', margin: '20px auto' }}>
+            <h2 style={{ textAlign: 'center', color: '#ecf0f1' }}>Book Flight</h2>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 <input
                     type="number"
@@ -56,7 +56,9 @@ function BookingForm({ flight }) {
                     style={{
                         padding: '10px',
                         borderRadius: '5px',
-                        border: '1px solid #ccc',
+                        border: '1px solid #ecf0f1',
+                        color: "#ecf0f1",
+                        backgroundColor:"#34495e",
                         fontSize: '16px'
                     }}
                 />
@@ -69,13 +71,15 @@ function BookingForm({ flight }) {
                     style={{
                         padding: '10px',
                         borderRadius: '5px',
-                        border: '1px solid #ccc',
+                        border: '1px solid #ecf0f1',
+                        color:"#ecf0f1",
+                        backgroundColor:"#34495e",
                         fontSize: '16px'
                     }}
                 />
                 <button type="submit" style={{
                     padding: '10px',
-                    backgroundColor: '#007bff',
+                    backgroundColor: '#28a745', // Green color for the button
                     color: '#fff',
                     borderRadius: '5px',
                     border: 'none',

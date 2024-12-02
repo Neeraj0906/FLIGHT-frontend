@@ -180,31 +180,35 @@ function SearchFlights() {
           <h2 style={{ textAlign: 'center', color:'#ecf0f1' }}>Available Flights</h2>
           <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
             {flights.map((flight) => (
-              <li key={flight.id} style={{
-                backgroundColor:'#fff',
-                padding:'15px',
-                marginBottom:'10px',
-                borderRadius:'8px',
-                boxShadow:'0 2px 4px rgba(0,0,0,0.1)',
-                display:'flex',
-                justifyContent:'space-between',
-                alignItems:'center'
-              }}>
-                Flight ID:{flight.id}, Price:{flight.price.total}, Departure Date:
-                {flight.departureDate}
-                <button onClick={() => setSelectedFlight(flight)} style={{
-                  padding:'5px 10px',
-                  backgroundColor:'#28a745',
-                  color:'#fff',
-                  border:'none',
-                  borderRadius:'5px',
-                  cursor:'pointer'
+                <li key={flight.id} style={{
+                    backgroundColor: '#34495e', // Dark background for flight item
+                    padding: '15px',
+                    marginBottom: '10px',
+                    borderRadius: '8px',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    color: '#ecf0f1' // Light text for contrast
                 }}>
-                  Book Flight
-                </button>
-              </li>
+                    <span>
+                        <strong>Flight ID:</strong> {flight.id}, 
+                        <strong> Price:</strong> ${flight.price.total}, 
+                        <strong> Departure Date:</strong> {new Date(flight.departureDate).toLocaleString()}
+                    </span>
+                    <button onClick={() => setSelectedFlight(flight)} style={{
+                        padding: '5px 10px',
+                        backgroundColor: '#28a745', // Green color for Book Flight button
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer'
+                    }}>
+                        Book Flight
+                    </button>
+                </li>
             ))}
-          </ul>
+        </ul>
 
           {/* Show Booking Form if a flight is selected */}
           {selectedFlight && <BookingForm flight={selectedFlight} />}
