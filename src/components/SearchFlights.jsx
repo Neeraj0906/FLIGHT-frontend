@@ -181,7 +181,7 @@ function SearchFlights() {
           <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
             {flights.map((flight) => (
                 <li key={flight.id} style={{
-                    backgroundColor: '#34495e', // Dark background for flight item
+                    backgroundColor: '#34495f', // Dark background for flight item
                     padding: '15px',
                     marginBottom: '10px',
                     borderRadius: '8px',
