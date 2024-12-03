@@ -1,4 +1,3 @@
-// src/components/SearchFlights.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import BookingForm from "./BookingForm"; // Import the BookingForm component
@@ -24,7 +23,7 @@ function SearchFlights() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [flights, setFlights] = useState([]);
-  const [selectedFlight, setSelectedFlight] = useState(null); // State for selected flight
+  const [selectedFlight, setSelectedFlight] = useState(null);
   const [originSuggestions, setOriginSuggestions] = useState([]);
   const [destinationSuggestions, setDestinationSuggestions] = useState([]);
 
@@ -44,14 +43,13 @@ function SearchFlights() {
         }
       );
 
-      console.log("Flight Search Response:", response.data.data); // Log response data
-      setFlights(response.data.data); // Assuming the flight data is in response.data.data
+      console.log("Flight Search Response:", response.data.data);
+      setFlights(response.data.data);
     } catch (error) {
       console.error("Error fetching flights:", error);
     }
   };
 
-  // Function to handle input change for origin
   const handleOriginChange = (e) => {
     const value = e.target.value;
     setOrigin(value);
@@ -65,7 +63,6 @@ function SearchFlights() {
     }
   };
 
-  // Function to handle input change for destination
   const handleDestinationChange = (e) => {
     const value = e.target.value;
     setDestination(value);
@@ -79,35 +76,33 @@ function SearchFlights() {
     }
   };
 
-  // Function to handle suggestion click
   const handleSuggestionClick = (code) => {
     setOrigin(code);
     setOriginSuggestions([]);
   };
 
-  // Function to handle destination suggestion click
   const handleDestinationSuggestionClick = (code) => {
     setDestination(code);
     setDestinationSuggestions([]);
   };
 
   return (
-    <div style={{ padding: '40px', backgroundColor: '#2c3e50', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: "100%" }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '20px', fontSize: "30px", color: '#ecf0f1' }}><b>Search Flights</b></h1>
-      <form onSubmit={handleSearch} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+    <div className="p-10 bg-gray-800 rounded-lg shadow-lg">
+      <h1 className="text-center text-3xl font-bold text-white mb-6">Search Flights</h1>
+      <form onSubmit={handleSearch} className="flex flex-col gap-4">
         <input
           type="text"
           placeholder="Origin IATA Code (e.g., SYD)"
           value={origin}
           onChange={handleOriginChange}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1', color: "#ecf0f1", backgroundColor:"#34495e" }} // Dark background for input
+          className="p-3 rounded border border-gray-300 text-gray-200 bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         {/* Suggestions for Origin */}
         {originSuggestions.length > 0 && (
-          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#32CD32', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
+          <ul className="list-none p-0 mt-2 bg-green-500 rounded-md shadow-md">
             {originSuggestions.map((iata) => (
-              <li key={iata.code} onClick={() => handleSuggestionClick(iata.code)} style={{ padding:'10px', cursor:'pointer' }}>
+              <li key={iata.code} onClick={() => handleSuggestionClick(iata.code)} className="p-2 cursor-pointer hover:bg-green-600">
                 {iata.code} - {iata.city}
               </li>
             ))}
@@ -120,30 +115,30 @@ function SearchFlights() {
           value={destination}
           onChange={handleDestinationChange}
           required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1', color:"#ecf0f1", backgroundColor:"#34495e" }} // Dark background for input
+          className="p-3 rounded border border-gray-300 text-gray-200 bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         {/* Suggestions for Destination */}
         {destinationSuggestions.length > 0 && (
-          <ul style={{ listStyleType: 'none', paddingLeft: '0', marginTop: '5px', backgroundColor:'#32CD32', borderRadius:'5px', boxShadow:'0 2px 4px rgba(0,0,0,0.2)' }}>
+          <ul className="list-none p-0 mt-2 bg-green-500 rounded-md shadow-md">
             {destinationSuggestions.map((iata) => (
-              <li key={iata.code} onClick={() => handleDestinationSuggestionClick(iata.code)} style={{ padding:'10px', cursor:'pointer' }}>
+              <li key={iata.code} onClick={() => handleDestinationSuggestionClick(iata.code)} className="p-2 cursor-pointer hover:bg-green-600">
                 {iata.code} - {iata.city}
               </li>
             ))}
           </ul>
         )}
         
-        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
+        <label className="text-gray-200 font-bold">
           Departure Date:
           <input
             type="date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
             required
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
+            className="ml-2 p-2 rounded border border-gray-300"
           />
         </label>
-        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
+        <label className="text-gray-200 font-bold">
           Number of Adults:
           <input
             type="number"
@@ -151,64 +146,42 @@ function SearchFlights() {
             onChange={(e) => setAdults(e.target.value)}
             min="1"
             required
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
+            className="ml-2 p-2 rounded border border-gray-300"
           />
         </label>
-        <label style={{ fontWeight: 'bold', color:"#ecf0f1" }}>
+        <label className="text-gray-200 font-bold">
           Number of Children:
           <input
             type="number"
             value={children}
             onChange={(e) => setChildren(e.target.value)}
             min="0"
-            style={{ marginLeft: '10px', padding: '10px', borderRadius: '5px', border: '1px solid #ecf0f1' }}
+            className="ml-2 p-2 rounded border border-gray-300"
           />
         </label>
-        <button type="submit" style={{
-          padding: '10px',
-          backgroundColor: '#007bff',
-          color: '#fff',
-          borderRadius: '5px',
-          border: 'none',
-          cursor: 'pointer',
-          fontWeight: 'bold'
-        }}><b>Search Flights</b></button>
+        <button type="submit" className="py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200 font-bold">
+          Search Flights
+        </button>
       </form>
 
+      {/* Display available flights */}
       {flights.length > 0 && (
-        <div style={{ marginTop: '20px' }}>
-          <h2 style={{ textAlign: 'center', color:'#ecf0f1' }}>Available Flights</h2>
-          <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+        <div className="mt-6">
+          <h2 className="text-center text-xl text-white">Available Flights</h2>
+          <ul className="list-none p-0">
             {flights.map((flight) => (
-                <li key={flight.id} style={{
-                    backgroundColor: '#34495f', // Dark background for flight item
-                    padding: '15px',
-                    marginBottom: '10px',
-                    borderRadius: '8px',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    color: '#ecf0f1' // Light text for contrast
-                }}>
-                    <span>
-                        <strong>Flight ID:</strong> {flight.id}, 
-                        <strong> Price:</strong> ${flight.price.total}, 
-                        <strong> Departure Date:</strong> {new Date(flight.departureDate).toLocaleString()}
-                    </span>
-                    <button onClick={() => setSelectedFlight(flight)} style={{
-                        padding: '5px 10px',
-                        backgroundColor: '#28a745', // Green color for Book Flight button
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer'
-                    }}>
-                        Book Flight
-                    </button>
-                </li>
+              <li key={flight.id} className="bg-gray-700 text-white p-4 mb-4 rounded-md shadow-md flex justify-between items-center">
+                <span>
+                  <strong>Flight ID:</strong> {flight.id}, 
+                  <strong> Price:</strong> ${flight.price.total}, 
+                  <strong> Departure Date:</strong> {new Date(flight.departureDate).toLocaleString()}
+                </span>
+                <button onClick={() => setSelectedFlight(flight)} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition duration-200">
+                  Book Flight
+                </button>
+              </li>
             ))}
-        </ul>
+          </ul>
 
           {/* Show Booking Form if a flight is selected */}
           {selectedFlight && <BookingForm flight={selectedFlight} />}

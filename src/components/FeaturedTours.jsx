@@ -26,15 +26,21 @@ function FeaturedTours() {
   ];
 
   return (
-    <section style={{ padding: '20px', backgroundColor: '#e0f7fa', width: '100%', marginTop: "10px", borderRadius: "10px" }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: "45px", color: "#00796b" }}><b>FEATURED TOURS</b></h2>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    <section className="p-5 bg-blue-100 rounded-lg mt-2">
+      <h2 className="text-center text-4xl font-bold text-[#00796b] mb-5">
+        FEATURED TOURS
+      </h2>
+      <div className="flex flex-col gap-5">
         {tours.map((tour, index) => (
-          <div key={index} style={{ backgroundColor: '#ffffff', border: '1px solid #e0e0e0', borderRadius: '8px', padding: '10px', display: 'flex', alignItems: 'center' }}>
-            <img style={{ height: "115px", width: "115px", borderRadius: "5px", marginRight: "10px" }} src={tour.imageUrl} alt={tour.name} />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: "10px", marginLeft: "20px", fontSize: "20px" }}>
-              <h4 style={{ fontWeight:"bold", fontSize:"25px", color:"#00796b" }}>{tour.name}</h4>
-              <p style={{ color:"#555" }}>{tour.description}</p>
+          <div key={index} className="bg-white border border-gray-300 rounded-lg p-4 flex items-center shadow-md">
+            <img 
+              src={tour.imageUrl} 
+              alt={tour.name} 
+              className="h-[115px] w-[115px] rounded-md mr-4" 
+            />
+            <div className="flex flex-col gap-2 ml-4">
+              <h4 className="text-[#00796b] text-xl font-bold">{tour.name}</h4>
+              <p className="text-gray-600">{tour.description}</p>
             </div>
           </div>
         ))}
