@@ -18,8 +18,9 @@ Payment gateway used is stripe, i used stripe API for payment.
 Airline APIs for real-time updates is Amadeus API
 
 Procedure to use:-
-
+# Step by Step PROCEDURE :-
 Things to note :- the website might me slow some times , so you might get responses little late , so you can also refresh ad try few times , if you get any error, now you can follow the steps below.
+also try this website frontend vercel link in both chrome and microsoft edge, it actually works better in  chrome.
 
 step-1: as soon as you open the vercel link that i have provided .
 
